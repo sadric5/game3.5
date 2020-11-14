@@ -1,0 +1,63 @@
+
+#Create by DricoKing5.0 11/14/2020
+"""Play a Game """
+
+import random 
+
+userName=input("Hi body what's your name :")
+print("Hey {} the gaol of this game is guess the ghost number\n So Good look!!".format(userName))
+#counter 
+counter=0
+
+#get a random number which is the ghost number 
+guess=random.randint(1,30)
+
+
+#A function to replay a game 
+def tryAgain():
+	print("\nDo you want to try again?\n")
+	print("Yes Tape 1\n\nNo Tape 0\n")
+
+	#force the user to tape 1 or 0 to response
+	try:
+		response=int(input("Enter your response:"));
+	except Exception as e:
+		print("Oof! Something went wrong :{}".format(e))
+	
+	if(response==1):
+		#get a new ghost nummer 
+		guess=random.randint(1,20)
+		guessing()
+	else:
+		print("Bye!!!")
+
+def guessing():
+	global guess
+	global counter
+	global userName
+	
+	try:
+		number=int(input("Guess the ghoss number:"))
+	except Exception as e:
+		print("Oof! Something went wrong:{}\n Try again!!".format(e))
+		guessing()
+	else:
+		#everytime your enter the number raise the counter
+		counter+=1
+		if(number==guess):
+			print("Excellent {}, you guess the ghost number in {} round!".format(userName, counter))
+			#initial my counter to 0
+			counter=0
+			tryAgain()
+
+			
+		elif(number<guess):
+			print("Your number is low than than the ghost number\n Try again")
+			guessing()
+		elif(number>guess):
+			print("Your number is great than the ghoss number\n Try again")
+			guessing()
+	
+guessing()	
+
+
