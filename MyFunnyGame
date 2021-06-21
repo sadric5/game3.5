@@ -4,12 +4,12 @@
 
 import random 
 
-userName=input("Hi body what's your name :")
-print("Hey {} the gaol of this game is guess the ghost number\n So Good look!!".format(userName))
+userName=input("Hi Buddy what's your name :")
+print("Hey {} the gaol of this game is to guess the ghost number\n So Good look!!".format(userName))
 #counter 
 counter=0
 
-#get a random number which is the ghost number 
+#Gost number 
 guess=random.randint(1,30)
 
 
