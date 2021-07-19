@@ -15,10 +15,10 @@ guess=random.randint(1,30)
 
 #A function to replay a game 
 def tryAgain():
-	print("\nDo you want to try again?\n")
+	print("\nDo you want to try one more time?\n")
 	print("Yes Tape 1\n\nNo Tape 0\n")
 
-	#force the user to tape 1 or 0 to response
+	#force the user to tape 1 or 0
 	try:
 		response=int(input("Enter your response:"));
 	except Exception as e:
